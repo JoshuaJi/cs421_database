@@ -1,12 +1,14 @@
 
-DROP TABLE transaction;
-DROP TABLE option;
-DROP TABLE mechanic;
-DROP TABLE manager;
-DROP TABLE contract;
-DROP TABLE car;
-DROP TABLE salesman;
-DROP TABLE employee;
-DROP TABLE customer;
-DROP TABLE carmanufacturer;
-DROP TABLE branchoffice;
+DROP TABLE transaction CASCADE;
+DROP TABLE option CASCADE;
+DROP TABLE mechanic CASCADE;
+DROP TABLE manager CASCADE;
+DROP TABLE contract CASCADE;
+DROP TABLE car CASCADE;
+DROP TABLE salesman CASCADE;
+DROP TABLE employee CASCADE;
+DROP TABLE customer CASCADE;
+DROP TABLE carmanufacturer CASCADE;
+DROP TABLE branchoffice CASCADE;
+DROP TABLE features CASCADE;
+DROP TABLE maintenance CASCADE;
