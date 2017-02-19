@@ -12,3 +12,4 @@ DROP TABLE carmanufacturer CASCADE;
 DROP TABLE branchoffice CASCADE;
 DROP TABLE features CASCADE;
 DROP TABLE maintenance CASCADE;
+DROP TABLE performs CASCADE;
