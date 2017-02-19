@@ -61,7 +61,7 @@ PRIMARY KEY (businessid)
 );
 
 CREATE TABLE car (
-vin 				c, 
+vin 				VARCHAR(13), 
 description 			TEXT NOT NULL, 
 licenseplate 			VARCHAR(7) NOT NULL, 
 price 				INTEGER NOT NULL CHECK (price > 0), 
