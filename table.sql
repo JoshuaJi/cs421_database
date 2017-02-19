@@ -61,9 +61,9 @@ PRIMARY KEY (businessid)
 );
 
 CREATE TABLE car (
-vin 				TEXT, 
+vin 				c, 
 description 			TEXT NOT NULL, 
-licenseplate 			TEXT NOT NULL, 
+licenseplate 			VARCHAR(7) NOT NULL, 
 price 				INTEGER NOT NULL CHECK (price > 0), 
 model 				TEXT NOT NULL, 
 color 				TEXT NOT NULL, 
@@ -126,7 +126,7 @@ PRIMARY KEY (maintenanceid)
 );
 
 CREATE TABLE performs(
-vin 					TEXT, 
+vin 					VARCHAR(13), 
 employeeid 				VARCHAR(6), 
 maintenanceid 				VARCHAR(6),
 PRIMARY KEY (vin, employeeid, maintenanceid),
@@ -136,7 +136,7 @@ FOREIGN KEY(maintenanceid) REFERENCES maintenance(maintenanceid)
 ); 
 
 CREATE TABLE features(
-vin 					TEXT, 
+vin 					VARCHAR(13), 
 optionid 				VARCHAR(6),
 PRIMARY KEY (vin, optionid),
 FOREIGN KEY(vin) REFERENCES car(vin) ,
