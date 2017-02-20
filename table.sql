@@ -92,7 +92,6 @@ PRIMARY KEY (optionid)
 
 CREATE TABLE contract (
 contractid 			VARCHAR(6), 
-expirydate 			DATE NOT NULL, 
 dateofinitiation 		DATE NOT NULL, 
 content 			TEXT NOT NULL, 
 price 				INTEGER NOT NULL CHECK (price > 0), 
