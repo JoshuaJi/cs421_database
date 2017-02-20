@@ -3,3 +3,12 @@ INSERT 0 1
 INSERT 0 1
 INSERT 0 1
 INSERT 0 1
+ businessid |   name   |  streetaddress  |   city   | province 
+------------+----------+-----------------+----------+----------
+ 111111     | BMW      | 900 Guy         | Montreal | QC
+ 222222     | Merceded | 201 Lausanne    | Montreal | QC
+ 333333     | Toyota   | 44 University   | Toronto  | ON
+ 452637     | Honda    | 876 Modugno     | Montreal | QC
+ 234567     | Nissan   | 543 Maisonneuve | Montreal | QC
+(5 rows)
+
