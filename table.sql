@@ -110,7 +110,6 @@ CREATE TABLE transaction (
 transactionid 				VARCHAR(6),
 paymenttype 				TEXT NOT NULL,
 time 					TIMESTAMP NOT NULL,
-transactiondate 			DATE NOT NULL,
 accountid 				VARCHAR(6) NOT NULL,
 amount 					INTEGER NOT NULL CHECK (amount > 0), 
 contractid 				VARCHAR(6) NOT NULL,
