@@ -8,16 +8,16 @@ PRIMARY KEY (branchid)
 
 
 CREATE TABLE employee (
-	employeeid 		VARCHAR(6),
-	name  			TEXT NOT NULL,
-	salary 			INTEGER NOT NULL,
-	branchid 		VARCHAR(3) NOT NULL,
-	streetaddress 		TEXT NOT NULL,
-	city 			TEXT NOT NULL,
-	province 		TEXT NOT NULL,
-	employedsince 	DATE NOT NULL,
-	PRIMARY KEY (employeeid),
-	FOREIGN KEY (branchid) REFERENCES branchoffice(branchid)
+employeeid 		VARCHAR(6),
+name  			TEXT NOT NULL,
+salary 			INTEGER NOT NULL,
+branchid 		VARCHAR(3) NOT NULL,
+streetaddress 		TEXT NOT NULL,
+city 			TEXT NOT NULL,
+province 		TEXT NOT NULL,
+employedsince 		DATE NOT NULL,
+PRIMARY KEY (employeeid),
+FOREIGN KEY (branchid) REFERENCES branchoffice(branchid)
 );
 
 CREATE TABLE mechanic ( 
@@ -84,10 +84,10 @@ FOREIGN KEY(businessid) REFERENCES carmanufacturer(businessid)
 
 
 CREATE TABLE option (
-	optionid 			VARCHAR(6),
-	optiontype 			TEXT NOT NULL,
-	price 				INTEGER NOT NULL CHECK (price > 0),
-	PRIMARY KEY (optionid)
+optionid 			VARCHAR(6),
+optiontype 			TEXT NOT NULL,
+price 				INTEGER NOT NULL CHECK (price > 0),
+PRIMARY KEY (optionid)
 );
 
 CREATE TABLE contract (
@@ -107,15 +107,15 @@ FOREIGN KEY(vin) REFERENCES car(vin)
 
 
 CREATE TABLE transaction (
-	transactionid 				VARCHAR(6),
-	paymenttype 				TEXT NOT NULL,
-	time 					TIMESTAMP NOT NULL,
-	transactiondate 			DATE NOT NULL,
-	accountid 				VARCHAR(6) NOT NULL,
-	amount 					INTEGER NOT NULL CHECK (amount > 0), 
-	contractid 				VARCHAR(6) NOT NULL,
-	PRIMARY KEY (transactionid),
-	FOREIGN KEY (contractid) REFERENCES contract(contractid)
+transactionid 				VARCHAR(6),
+paymenttype 				TEXT NOT NULL,
+time 					TIMESTAMP NOT NULL,
+transactiondate 			DATE NOT NULL,
+accountid 				VARCHAR(6) NOT NULL,
+amount 					INTEGER NOT NULL CHECK (amount > 0), 
+contractid 				VARCHAR(6) NOT NULL,
+PRIMARY KEY (transactionid),
+FOREIGN KEY (contractid) REFERENCES contract(contractid)
 );
 
 CREATE TABLE maintenance(
