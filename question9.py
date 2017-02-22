@@ -1,27 +1,28 @@
+import random
+
 businessid = []
 name = []
 streetaddress = []
-city = ["Montreal", "Toronto", "Vancouver", "Ottawa", "Moncton", "Edmonton", "Victoria", "Orleans", "London", "Halifax", "St. John's", "Markham", "Richmond Hill"]
-province = ["QC", "ON", "BC", "ON", "NB", "AB", "NS", "NL"]
-def get_random_city(prov)
-  if prov == 'ON':
-    list = ['Toronto', 'Ottawa', 'Orleans', 'London', 'Richmond Hill']
-    return random.choise(list)
-    # generate random city from Toronto Ottawa Orleans London Richmond Hill
-  if prov == 'QC':
-    return 'Montreal'
-  if prov == 'BC':
-    return 'Vancouver'
-  if prov == 'NB':
-    return 'Moncton'
-  if prov == 'AB':
-    return 'Edmonton'
-  if prov == 'NS':
-    return 'Halifax'
-  if prov == 'NL':
-    return 'St. John\'s'
-if montreal
-province = qc
+
+provs = {
+	"Montreal": "QC",
+	"Toronto": "ON",
+	"Vancouver": "BC",
+	"Ottawa": "ON",
+	"Moncton": "NB",
+	"Edmonton": "AB",
+	"Victoria": "BC",
+	"Orleans": "ON",
+	"London": "ON",
+	"Halifax": "NS",
+	"St. John's": "NL", 
+	"Markham": "ON", 
+	"Richmond Hill": "ON"
+}
+
+def get_random_city():
+	city = random.choice(provs.keys())
+	return (city, provs[city])
 
 
 vin = []
