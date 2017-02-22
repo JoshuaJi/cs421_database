@@ -1,7 +1,7 @@
 import random
 
 businessid = []
-name = []
+name = ["Toyota", "Volkswagen", "Nissan", "BMW", "Mercedes", "Lexus", "Range Rover", "Audi", "Honda", "Chevrolet", "Kia", "Hyundai"]
 streetaddress = []
 
 provs = {
