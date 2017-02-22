@@ -1,4 +1,5 @@
 import random
+from random import randint
 
 businessid = []
 name = ["Toyota", "Volkswagen", "Nissan", "BMW", "Mercedes", "Lexus", "Range Rover", "Audi", "Honda", "Chevrolet", "Kia", "Hyundai"]
@@ -24,6 +25,9 @@ def get_random_city():
 	city = random.choice(provs.keys())
 	return (city, provs[city])
 
+
+def get_random_businessid():
+	return randint(100000, 999999)
 
 vin = []
 description = []
