@@ -25,7 +25,7 @@ def get_random_manufac_city():
 	city = random.choice(provs.keys())
 	return (city, provs[city])
 def get_random_manufac_businessid():
-	int temp_businessid = randint(100000, 999999)
+	temp_businessid = randint(100000, 999999)
 	return temp_businessid
 def get_radom_manufac_streetaddress():
 	return gen_data.create_street()
@@ -65,9 +65,9 @@ def get_random_car_branchid():
 	return random.choice(branchid)
 
 def generate_businessids():
-	for car_m in names:
+	for car_m in name:
 		for city in provs:
-			car_manufacturer[get_random_manufac_businessid()] = (car_m, get_radom_manufac_streetaddress(), city, provs[city])
+			car_manufacturers[get_random_manufac_businessid()] = (car_m, get_radom_manufac_streetaddress(), city, provs[city])
 
 
 businessid = {
@@ -79,3 +79,6 @@ businessid = {
 	
 }
 manufacturedsince = []
+
+generate_businessids()
+print car_manufacturers
