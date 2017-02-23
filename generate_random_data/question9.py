@@ -57,7 +57,7 @@ def get_random_manufac_name():
 	return random.choice(name)
 
 def get_random_vin():
-	return vin.getRandomVin()
+	return vin.getRandomVin()[:13]
 
 description = ["New", "Used"]
 def get_random_car_description():
