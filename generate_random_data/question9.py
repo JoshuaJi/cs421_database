@@ -106,10 +106,10 @@ def generate_businessids():
 		for city in provs:
 			ran_businessid = get_random_manufac_businessid()
 			if car_m in make_businessids:
-				make_businessids[car_m] = make_businessids[car_m].append(ran_businessid)
+				make_businessids[car_m].append(ran_businessid)
 			else:
 				make_businessids[car_m] = [ran_businessid]				
-			car_manufacturers[get_random_manufac_businessid()] = (car_m, get_radom_manufac_streetaddress(), city, provs[city])
+			car_manufacturers[ran_businessid] = (car_m, get_radom_manufac_streetaddress(), city, provs[city])
 
 businessid = {
 	"BMW": 111111,
