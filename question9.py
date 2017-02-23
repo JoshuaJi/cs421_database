@@ -1,6 +1,7 @@
 import random
 from random import randint
 from barnum import gen_data
+
 name = ["Toyota", "Volkswagen", "Nissan", "BMW", "Mercedes", "Lexus", "Range Rover", "Audi", "Honda", "Chevrolet", "Kia", "Hyundai"]
 provs = {
 	"Montreal": "QC",
@@ -17,22 +18,27 @@ provs = {
 	"Markham": "ON", 
 	"Richmond Hill": "ON"
 }
-def get_random_city():
+def get_random_manufac_city():
 	city = random.choice(provs.keys())
 	return (city, provs[city])
-def get_random_businessid():
+def get_random_manufac_businessid():
 	return randint(100000, 999999)
-def get_radom_streetaddress():
+def get_radom_manufac_streetaddress():
 	return gen_data.create_street()
 def get_random_carmanufac_name():
 	return random.choice(name)
 
 vin = []
-description = []
+description = ["New", "Used"]
+def get_random_car_description():
+	return random.choice(description)
 licenseplate = []
-price = []
+def get_random_car_price():
+	return randint(10000, 120000)
 model = []
-color []
+color = ["Red", "Blue", "Green", "Yellow", "Gray", "White", "Black", "Pink", "Orange"]
+def get_random_car_color():
+	return random.choice(color)
 year = []
 make = []
 fuel = []
