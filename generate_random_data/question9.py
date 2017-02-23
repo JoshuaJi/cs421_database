@@ -138,7 +138,7 @@ def generate_cars():
 	vin = get_random_vin()
 	description = get_random_car_description()
 	licenseplate = generate_random_license_plate(7)
-	price = generate_random_car_price()
+	price = get_random_car_price()
 	color = get_random_car_color()
 	random_date = get_random_date()
 	year = random_date.split('-')[0]
