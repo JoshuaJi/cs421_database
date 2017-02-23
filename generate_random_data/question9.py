@@ -160,4 +160,5 @@ def generate_cars():
 	manufacturedsince = random_date
 	print vin + " " + description + " " + licenseplate + " " + str(price) + " " + color + " " + random_date + " " + str(year) + " " + make + " " + model + " " + fuel + " " + str(mileage) + " " + str(acceleration) + " " + enginetype + " " + drivertype + " " + str(branchid) + " " + str(businessid) + " " + manufacturedsince   
 	
-generate_cars()
+for i in range(10):
+	generate_cars()
