@@ -158,9 +158,8 @@ def generate_cars():
 	branchid = get_random_car_branchid()
 	businessid = random.choice(make_businessids[make])
 	manufacturedsince = random_date
-	print vin + " " + description + " " + licenseplate + " " + str(price) + " " + color + " " + random_date + " " + str(year) + " " + make + " " + model + " " + fuel + " " + str(mileage) + " " + str(acceleration) + " " + enginetype + " " + drivertype + " " + str(branchid) + " " + str(businessid) + " " + manufacturedsince   
-	
+	#print vin + " " + description + " " + licenseplate + " " + str(price) + " " + color + " " + random_date + " " + str(year) + " " + make + " " + model + " " + fuel + " " + str(mileage) + " " + str(acceleration) + " " + enginetype + " " + drivertype + " " + str(branchid) + " " + str(businessid) + " " + manufacturedsince   
+	print 'INSERT INTO car VALUES(\'{}\')'.format(vin)
 for i in range(10):
 	generate_cars()
 	
-print 'INSERT INTO car VALUES(\'{}\')'.format(vin)
