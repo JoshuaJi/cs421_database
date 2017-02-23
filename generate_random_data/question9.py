@@ -152,6 +152,6 @@ def generate_cars():
 	branchid = get_random_car_branchid()
 	businessid = generate_businessids()
 	manufacturedsince = random_date
-	print vin + " " + description + " " + licenseplate + " " + price + " " + color + " " + random_date + " " + year + " " + make + " " + model + " " + fuel + " " + mileage + " " + acceleration + " " + enginetype + " " + drivertype + " " + branchid + " " + businessid + " " + manufacturedsince   
+	print vin + " " + description + " " + licenseplate + " " + str(price) + " " + color + " " + random_date + " " + str(year) + " " + make + " " + model + " " + fuel + " " + str(mileage) + " " + str(acceleration) + " " + enginetype + " " + drivertype + " " + str(branchid) + " " + str(businessid) + " " + manufacturedsince   
 	
 generate_cars()
