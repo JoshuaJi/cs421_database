@@ -1,10 +1,7 @@
 import random
 from random import randint
-
-businessid = []
+from barnum import gen_data
 name = ["Toyota", "Volkswagen", "Nissan", "BMW", "Mercedes", "Lexus", "Range Rover", "Audi", "Honda", "Chevrolet", "Kia", "Hyundai"]
-streetaddress = []
-
 provs = {
 	"Montreal": "QC",
 	"Toronto": "ON",
@@ -20,14 +17,15 @@ provs = {
 	"Markham": "ON", 
 	"Richmond Hill": "ON"
 }
-
 def get_random_city():
 	city = random.choice(provs.keys())
 	return (city, provs[city])
-
-
 def get_random_businessid():
 	return randint(100000, 999999)
+def get_radom_streetaddress():
+	return gen_data.create_street()
+def get_random_carmanufac_name():
+	return random.choice(name)
 
 vin = []
 description = []
