@@ -6,6 +6,7 @@ import datetime
 import string
 
 car_manufacturers = {}
+make_businessids = {}
 
 name = ["Toyota", "Volkswagen", "Nissan", "BMW", "Mercedes", "Lexus", "Range Rover", "Audi", "Honda", "Chevrolet", "Kia", "Hyundai"]
 
@@ -103,6 +104,11 @@ def get_random_car_branchid():
 def generate_businessids():
 	for car_m in name:
 		for city in provs:
+			ran_businessid = get_random_manufac_businessid()
+			if car_m in make_businessids:
+				make_businessids[car_m] = make_businessids[car_m].append(ran_businessid)
+			else:
+				make_businessids[car_m] = [ran_businessid]				
 			car_manufacturers[get_random_manufac_businessid()] = (car_m, get_radom_manufac_streetaddress(), city, provs[city])
 
 businessid = {
@@ -150,7 +156,7 @@ def generate_cars():
 	enginetype = get_random_car_enginetype()
 	drivertype = get_random_car_drivertype()
 	branchid = get_random_car_branchid()
-	businessid = generate_businessids()
+	businessid = random.choice(make_businessids[make])
 	manufacturedsince = random_date
 	print vin + " " + description + " " + licenseplate + " " + str(price) + " " + color + " " + random_date + " " + str(year) + " " + make + " " + model + " " + fuel + " " + str(mileage) + " " + str(acceleration) + " " + enginetype + " " + drivertype + " " + str(branchid) + " " + str(businessid) + " " + manufacturedsince   
 	
