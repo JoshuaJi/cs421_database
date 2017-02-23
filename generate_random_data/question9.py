@@ -23,7 +23,9 @@ def get_random_manufac_city():
 	city = random.choice(provs.keys())
 	return (city, provs[city])
 def get_random_manufac_businessid():
-	return randint(100000, 999999)
+	int temp_businessid = randint(100000, 999999)
+	businessid.append(temp_businessid)
+	return temp_businessid
 def get_radom_manufac_streetaddress():
 	return gen_data.create_street()
 def get_random_carmanufac_name():
