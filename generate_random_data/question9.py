@@ -140,7 +140,7 @@ def generate_cars():
 	licenseplate = generate_random_license_plate(7)
 	price = get_random_car_price()
 	color = get_random_car_color()
-	random_date = get_random_date()
+	random_date = generate_random_date()
 	year = random_date.split('-')[0]
 	make = car_manufacturers[random.choice(car_manufacturers.keys())][0]
 	model = random.choice(make_types[make])
