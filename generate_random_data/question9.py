@@ -3,6 +3,7 @@ from random import randint
 from barnum import gen_data
 import vin
 import datetime
+import string
 
 car_manufacturers = {}
 
@@ -99,5 +100,20 @@ businessid = {
 def generate_random_date():
 	temp_date = datetime.date(randint(2005,2017), randint(1,12),randint(1,28))
 	return temp_date.year+"-"+temp_date.month+"-"+temp_date.day
+
+
+
+def generate_random_license_plate(digits):
+	letter_or_number = ['letter', 'number']
+	result = ""
+	for i in xrange(digits):
+		option = random.choice(letter_or_number)
+		if (option == 'letter'):
+			result += random.choice(string.ascii_letters).upper()
+		else:
+			result += str(random.randint(0,9))
+
+	return result
+
 
 generate_businessids()
