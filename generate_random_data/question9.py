@@ -3,6 +3,8 @@ from random import randint
 from barnum import gen_data
 import vin
 
+car_manufacturers = {}
+
 name = ["Toyota", "Volkswagen", "Nissan", "BMW", "Mercedes", "Lexus", "Range Rover", "Audi", "Honda", "Chevrolet", "Kia", "Hyundai"]
 provs = {
 	"Montreal": "QC",
@@ -24,7 +26,6 @@ def get_random_manufac_city():
 	return (city, provs[city])
 def get_random_manufac_businessid():
 	int temp_businessid = randint(100000, 999999)
-	businessid.append(temp_businessid)
 	return temp_businessid
 def get_radom_manufac_streetaddress():
 	return gen_data.create_street()
@@ -62,5 +63,19 @@ def get_random_car_drivertype():
 branchid = ["001", "002", "003", "004", "005"]
 def get_random_car_branchid():
 	return random.choice(branchid)
-businessid = []
+
+def generate_businessids():
+	for car_m in names:
+		for city in provs:
+			car_manufacturer[get_random_manufac_businessid()] = (car_m, get_radom_manufac_streetaddress(), city, provs[city])
+
+
+businessid = {
+	"BMW": 111111,
+	"Mercedes": 222222,
+	"Toyota": 333333,
+	"Honda": 452637,
+	"Nissan": 234567,
+	
+}
 manufacturedsince = []
