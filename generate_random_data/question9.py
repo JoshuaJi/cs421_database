@@ -41,13 +41,24 @@ model = []
 color = ["Red", "Blue", "Green", "Yellow", "Gray", "White", "Black", "Pink", "Orange"]
 def get_random_car_color():
 	return random.choice(color)
-year = []
+def get_random_car_year():
+	return randint(2005, 2017)
 make = []
-fuel = []
-mileage = []
-acceleration = []
-enginetype = []
-drivertype = []
+fuel = ["Supreme", "Regular", "Diesel"]
+def get_random_car_fuel():
+	return random.choice(fuel)
+def get_random_car_mileage():
+	return randint(0, 200000)
+def get_random_car_acceleration():
+	return randint(3, 15)
+enginetype = ["gas", "diesel"]
+def get_random_car_enginetype():
+	return random.choice(enginetype)
+drivertype = ["2-wheel", "4-wheel"]
+def get_random_car_drivertype():
+	return random.choice(drivertype)
 branchid = ["001", "002", "003", "004", "005"]
+def get_random_car_branchid():
+	return random.choice(branchid)
 businessid = []
 manufacturedsince = []
