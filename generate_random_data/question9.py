@@ -38,7 +38,6 @@ provs = {
 	"Orleans": "ON",
 	"London": "ON",
 	"Halifax": "NS",
-	"St. John's": "NL", 
 	"Markham": "ON", 
 	"Richmond Hill": "ON"
 }
@@ -142,29 +141,38 @@ def generate_random_license_plate(digits):
 
 
 generate_businessids()
-for item in car_manufacturers_sql:
-	print item
-	
+
+with open('car_manufacturers.sql', 'w') as f:
+	for item in car_manufacturers_sql:
+		f.write(item+'\n')
+print "{} car manufacturers generated".format(len(car_manufacturers_sql))
+
 def generate_cars():
-	vin = get_random_vin()
-	description = get_random_car_description()
-	licenseplate = generate_random_license_plate(7)
-	price = get_random_car_price()
-	color = get_random_car_color()
-	random_date = generate_random_date()
-	year = random_date.split('-')[0]
-	make = car_manufacturers[random.choice(car_manufacturers.keys())][0]
-	model = random.choice(make_types[make])
-	fuel = get_random_car_fuel()
-	mileage = get_random_car_mileage()
-	acceleration = get_random_car_acceleration()
-	enginetype = get_random_car_enginetype()
-	drivertype = get_random_car_drivertype()
-	branchid = get_random_car_branchid()
-	businessid = random.choice(make_businessids[make])
-	manufacturedsince = random_date
-	#print vin + " " + description + " " + licenseplate + " " + str(price) + " " + color + " " + random_date + " " + str(year) + " " + make + " " + model + " " + fuel + " " + str(mileage) + " " + str(acceleration) + " " + enginetype + " " + drivertype + " " + str(branchid) + " " + str(businessid) + " " + manufacturedsince   
-	print 'INSERT INTO car VALUES(\'{}\', \'{}\',\'{}\', {}, \'{}\', \'{}\', {}, \'{}\', \'{}\', {}, {}, \'{}\', \'{}\', \'{}\', \'{}\', \'{}\');'.format(vin, description, licenseplate, price, model, color, year, make, fuel, mileage, acceleration, enginetype, drivertype, branchid, businessid, manufacturedsince)
-for i in range(5):
-	generate_cars()
+	temp_cars = []
+	for i in xrange(200):
+		vin = get_random_vin()
+		description = get_random_car_description()
+		licenseplate = generate_random_license_plate(7)
+		price = get_random_car_price()
+		color = get_random_car_color()
+		random_date = generate_random_date()
+		year = random_date.split('-')[0]
+		make = car_manufacturers[random.choice(car_manufacturers.keys())][0]
+		model = random.choice(make_types[make])
+		fuel = get_random_car_fuel()
+		mileage = get_random_car_mileage()
+		acceleration = get_random_car_acceleration()
+		enginetype = get_random_car_enginetype()
+		drivertype = get_random_car_drivertype()
+		branchid = get_random_car_branchid()
+		businessid = random.choice(make_businessids[make])
+		manufacturedsince = random_date
+		#print vin + " " + description + " " + licenseplate + " " + str(price) + " " + color + " " + random_date + " " + str(year) + " " + make + " " + model + " " + fuel + " " + str(mileage) + " " + str(acceleration) + " " + enginetype + " " + drivertype + " " + str(branchid) + " " + str(businessid) + " " + manufacturedsince   
+		temp_cars.append('INSERT INTO car VALUES(\'{}\', \'{}\',\'{}\', {}, \'{}\', \'{}\', {}, \'{}\', \'{}\', {}, {}, \'{}\', \'{}\', \'{}\', \'{}\', \'{}\');'.format(vin, description, licenseplate, price, model, color, year, make, fuel, mileage, acceleration, enginetype, drivertype, branchid, businessid, manufacturedsince))
+	with open('cars.sql', 'w') as f:
+		for item in temp_cars:
+			f.write(item+'\n')
+	print "{} cars generated".format(len(temp_cars))
+
+generate_cars()
 	
