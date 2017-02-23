@@ -8,6 +8,23 @@ import string
 car_manufacturers = {}
 
 name = ["Toyota", "Volkswagen", "Nissan", "BMW", "Mercedes", "Lexus", "Range Rover", "Audi", "Honda", "Chevrolet", "Kia", "Hyundai"]
+
+make_types = {
+	'Toyota': ['Yaris', 'Corolla', 'Camry', 'Avalon', 'Sienna'],
+	'Volkswagen': ['Amarok', 'Caddy', 'CC', 'Fox', 'Gol G5', 'Golf Mk6'],
+	'Nissan': ['Juke', 'Murano', 'Rogue', 'GTR', 'Altima', 'Leaf', 'Frontier'],
+	'BMW': ['x5', 'x6', 'x3', 'x1', 'x2', 'm4', 'm3', '320', '428', '325i', '325ii'],
+	'Mercedes': ['C-300', 'C-400', 'E-300', 'E-400', 'E-63', 'S-63', 'S-500','ML550', 'CLS'],
+	'Lexus': ['GS 300', 'GS 400', 'GS 430', 'GS 450', 'GS 460'],
+	'Range Rover': ['HSE', 'Vogue', 'Vogue SE'],
+	'Audi': ['A1','A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'Q3', 'Q5', 'Q7', 'SQ5', 'RS7'],
+	'Honda': ['Fit', 'Civic', 'HR-V', 'Accord', 'CR-V', 'Pilot', 'Odyssey'],
+	'Chevrolet': ['Aveo', 'Bolt', 'Camaro', 'Caprice', 'Cobalt', 'Cruze', 'Corvette'],
+	'Kia': ['Forte', 'Sorento', 'Cadenza', 'K900', 'Optima', 'Niro', 'Optima'],
+	'Hyundai': ['Elantra', 'Genesis', 'Ioniq', 'Santa Cruz', 'Accent', 'Sonata']
+}
+
+
 provs = {
 	"Montreal": "QC",
 	"Toronto": "ON",
@@ -102,7 +119,6 @@ def generate_random_date():
 	return temp_date.year+"-"+temp_date.month+"-"+temp_date.day
 
 
-
 def generate_random_license_plate(digits):
 	letter_or_number = ['letter', 'number']
 	result = ""
@@ -117,3 +133,25 @@ def generate_random_license_plate(digits):
 
 
 generate_businessids()
+
+def generate_cars():
+	vin = get_random_vin()
+	description = get_random_car_description()
+	licenseplate = generate_random_license_plate(7)
+	price = generate_random_car_price()
+	color = get_random_car_color()
+	random_date = get_random_date()
+	year = random_date.split('-')[0]
+	make = car_manufacturers[random.choice(car_manufacturers.keys())][0]
+	model = random.choice(make_types[make])
+	fuel = get_random_car_fuel()
+	mileage = get_random_car_mileage()
+	acceleration = get_random_car_acceleration()
+	enginetype = get_random_car_enginetype()
+	drivertype = get_random_car_drivertype()
+	branchid = get_random_car_branchid()
+	businessid = generate_businessids()
+	manufacturedsince = random_date
+	print vin + " " + description + " " + licenseplate + " " + price + " " + color + " " + random_date + " " + year + " " + make + " " + model + " " + fuel + " " + mileage + " " + acceleration + " " + enginetype + " " + drivertype + " " + branchid + " " + businessid + " " + manufacturedsince   
+	
+generate_cars()
