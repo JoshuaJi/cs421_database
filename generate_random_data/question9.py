@@ -162,3 +162,5 @@ def generate_cars():
 	
 for i in range(10):
 	generate_cars()
+	
+'INSERT INTO car VALUES('{}').format(vin)
