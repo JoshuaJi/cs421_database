@@ -63,7 +63,7 @@ PRIMARY KEY (businessid)
 CREATE TABLE car (
 vin 				VARCHAR(13), 
 description 			TEXT NOT NULL, 
-licenseplate 			VARCHAR(7) NOT NULL, 
+licenseplate 			VARCHAR(7) UNIQUE NOT NULL, 
 price 				INTEGER NOT NULL CHECK (price > 0), 
 model 				TEXT NOT NULL, 
 color 				TEXT NOT NULL, 
