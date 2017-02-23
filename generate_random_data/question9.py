@@ -2,6 +2,7 @@ import random
 from random import randint
 from barnum import gen_data
 import vin
+import datetime
 
 car_manufacturers = {}
 
@@ -50,6 +51,7 @@ make = []
 fuel = ["Supreme", "Regular", "Diesel"]
 def get_random_car_fuel():
 	return random.choice(fuel)
+
 def get_random_car_mileage():
 	return randint(0, 200000)
 def get_random_car_acceleration():
@@ -75,10 +77,14 @@ businessid = {
 	"Mercedes": 222222,
 	"Toyota": 333333,
 	"Honda": 452637,
-	"Nissan": 234567,
+	"Nissan": 234567
 	
 }
 manufacturedsince = []
+
+def generate_random_date():
+	temp_date = datetime.date(randint(2005,2017), randint(1,12),randint(1,28))
+	return temp_date.year+"-"+temp_date.month+"-"+temp_date.day
 
 generate_businessids()
 print car_manufacturers
