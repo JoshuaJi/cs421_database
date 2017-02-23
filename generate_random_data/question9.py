@@ -6,7 +6,7 @@ import datetime
 import string
 
 car_manufacturers = {}
-car_manufacturers_sql = {}
+car_manufacturers_sql = []
 make_businessids = {}
 
 name = ["Toyota", "Volkswagen", "Nissan", "BMW", "Mercedes", "Lexus", "Range Rover", "Audi", "Honda", "Chevrolet", "Kia", "Hyundai"]
