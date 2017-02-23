@@ -6,6 +6,7 @@ import datetime
 import string
 
 car_manufacturers = {}
+car_manufacturers_sql = {}
 make_businessids = {}
 
 name = ["Toyota", "Volkswagen", "Nissan", "BMW", "Mercedes", "Lexus", "Range Rover", "Audi", "Honda", "Chevrolet", "Kia", "Hyundai"]
@@ -105,11 +106,13 @@ def generate_businessids():
 	for car_m in name:
 		for city in provs:
 			ran_businessid = get_random_manufac_businessid()
+			ran_street_address = get_radom_manufac_streetaddress()
 			if car_m in make_businessids:
 				make_businessids[car_m].append(ran_businessid)
 			else:
 				make_businessids[car_m] = [ran_businessid]				
-			car_manufacturers[ran_businessid] = (car_m, get_radom_manufac_streetaddress(), city, provs[city])
+			car_manufacturers[ran_businessid] = (car_m, ran_street_address, city, provs[city])
+			car_manufacturers_sql.append('INSERT INTO carmanufacturer  VALUES (\'{}\', \'{}\', \'{}\', \'{}\', \'{}\');'.format(ran_businessid, car_m, ran_street_address, city, provs[city]))
 
 businessid = {
 	"BMW": 111111,
@@ -139,7 +142,9 @@ def generate_random_license_plate(digits):
 
 
 generate_businessids()
-
+for item in car_manufacturers_sql:
+	print item
+	
 def generate_cars():
 	vin = get_random_vin()
 	description = get_random_car_description()
