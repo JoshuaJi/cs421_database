@@ -142,7 +142,7 @@ def generate_random_license_plate(digits):
 
 generate_businessids()
 
-with open('car_manufacturers.sql', 'w') as f:
+with open('question9_carmanufacturers.sql', 'w') as f:
 	for item in car_manufacturers_sql:
 		f.write(item+'\n')
 print "{} car manufacturers generated".format(len(car_manufacturers_sql))
@@ -169,7 +169,7 @@ def generate_cars():
 		manufacturedsince = random_date
 		#print vin + " " + description + " " + licenseplate + " " + str(price) + " " + color + " " + random_date + " " + str(year) + " " + make + " " + model + " " + fuel + " " + str(mileage) + " " + str(acceleration) + " " + enginetype + " " + drivertype + " " + str(branchid) + " " + str(businessid) + " " + manufacturedsince   
 		temp_cars.append('INSERT INTO car VALUES(\'{}\', \'{}\',\'{}\', {}, \'{}\', \'{}\', {}, \'{}\', \'{}\', {}, {}, \'{}\', \'{}\', \'{}\', \'{}\', \'{}\');'.format(vin, description, licenseplate, price, model, color, year, make, fuel, mileage, acceleration, enginetype, drivertype, branchid, businessid, manufacturedsince))
-	with open('cars.sql', 'w') as f:
+	with open('question9_cars.sql', 'w') as f:
 		for item in temp_cars:
 			f.write(item+'\n')
 	print "{} cars generated".format(len(temp_cars))
