@@ -4,7 +4,7 @@ WHERE salary < 100000;
 
 DELETE FROM transaction WHERE date_part('year', time) < 2017;
 
-INSERT INTO features VALUES('1ASCL12433A00', (SELECT optionid FROM features WHERE vin = 'JH23N1B452940'));
+INSERT INTO features VALUES('1ASCL12433A00', (SELECT o.optionid from features f, option o  WHERE vin = 'JH23N1B452940' AND f.optionid = o.optionid AND optiontype = 'Keyless Go'));
 
 UPDATE car
 SET mileage = mileage + 1000
